@@ -159,7 +159,7 @@ Participants can contact Dell directly for warranty & customer support for hardw
 
 ​		5. Click `START` to begin writing the ISO.
 
-![image-20200505231623160](C:\Users\paul.sibley\AppData\Roaming\Typora\typora-user-images\image-20200505231623160.png)
+![image-20200505231623160](\images\image-20200505231623160.png)
 
 ### 2.5. Virtual Deployment
 
