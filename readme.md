@@ -10,7 +10,7 @@
 
 
 
-<div style="text-align: right"> Version: 20220215</div>
+<div style="text-align: right"> Version: 20220525</div>
 
 
 
@@ -26,14 +26,6 @@
 
 
 
-
-
-
-
-
-
-
-
 <div style="text-align:center">    
   <a href="http://www.canarie.ca">canarie.ca</a> | 
   <a href="https://twitter.com/CANARIE_Inc">@CANARIE</a>
@@ -41,19 +33,6 @@
 
 
 <div style="page-break-after: always; break-after: page;"></div>
-
-
-
-----
-
-
-<p style="font-weight:600; font-size:30px ; color:black ; text-align:center">Table of Contents</p>
-
-
-
-
-[toc]
-
 
 
 <div style="page-break-after: always; break-after: page;"></div>
