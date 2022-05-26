@@ -24,7 +24,7 @@ This document is a step-by-step guide for the configuration of the Zeek platform
 - Blocks that start with `#` are expected to be run as the `root` user.
 - Blocks that start with `$` are expected to be run as the `zeek` user.
 
-### 1.1 Community Resources
+### 1.1 Community ResourceS
 
 >  The Zeek community is vibrant, friendly, and easily accessible.  Use the following resources for communication and documentation questions that fall outside of this document and/or project.
 
