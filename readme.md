@@ -6,26 +6,6 @@
 
 <p style="font-weight:600; font-size:30px ; color:black; text-align:center">Zeek 4.0.5 LTS Install Guide</p>
 
-
-
-
-
-<div style="text-align: right"> Version: 20220525</div>
-
-
-
-<div style="text-align: right">Author: Paul Sibley</div>
-
-
-
-<div style="text-align: right">Senior Cybersecurity Analyst</div>
-
-
-
-<div style="text-align: right">paul.sibley@canarie.ca</div>
-
-
-
 <div style="text-align:center">    
   <a href="http://www.canarie.ca">canarie.ca</a> | 
   <a href="https://twitter.com/CANARIE_Inc">@CANARIE</a>
