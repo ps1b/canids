@@ -1,0 +1,18 @@
+[Service]
+
+[Unit]
+Description=Bring up an interface in promiscuous mode during boot
+After=network.target
+
+[Service]
+Type=oneshot
+
+ExecStart=/usr/sbin/ip link set dev eno2 promisc on
+ExecStart=/usr/sbin/ip link set dev ens2f0 promisc on
+ExecStart=/usr/sbin/ip link set dev ens2f1 promisc on
+
+TimeoutStartSec=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
