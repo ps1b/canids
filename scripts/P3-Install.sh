@@ -6,20 +6,20 @@ sed -i -e "s|enabled=0|enabled=1|g" /etc/yum.repos.d/CentOS-Stream-PowerTools.re
 echo -e "Install zeek repository"
 cd /etc/yum.repos.d/ && wget https://download.opensuse.org/repositories/security:zeek/CentOS_8_Stream/security:zeek.repo
 
-echo -e "Install Dependencies"
+echo -e "Install Dependencies and zeek"
 yum -y install cmake make gcc gcc-c++ flex bison libpcap-devel openssl-devel platform-python-devel swig zlib-devel kernel-devel kernel-headers python36 network-scripts tar wget gdb git python3-pip sendmail sendmail-cf rsync unzip epel-release tcpdump zeek-lts zeek-lts-devel
 
 echo -e "### Creating zeek user and group"
 groupadd zeek && useradd zeek -g zeek
-echo -e "### Creating create /opt/zeek and assign permissions"
+
+echo -e "### Creating create /opt/zeek/, /home/zeek/.ssh, /home/zeek/zeek-install"
 mkdir /opt/zeek /home/zeek/.ssh /home/zeek/zeek-install
-chown -R zeek:zeek /opt/zeek/ /home/zeek
+
 echo -e "### Creating RSA key pair"
 ssh-keygen -q -t rsa -b 4096 -N '' -f /home/zeek/.ssh/id_rsa <<<y >/dev/null 2>&1
 
 echo -e "### Fixing permissions for zeek user..."
 chown -R zeek:zeek /opt/zeek/ /home/zeek && setcap cap_net_raw=eip /opt/zeek/bin/zeek && setcap cap_net_raw=eip /opt/zeek/bin/capstats
-
 
 echo -e "### Downloading and installing files into /home/zeek/install\n###"
 cd /home/zeek/zeek-install
@@ -47,7 +47,8 @@ chmod +x rsync.sh
 mv rsync.sh /home/zeek
 
 echo -e "### Fixing permissions for zeek user..."
-chown -R zeek:zeek /opt/zeek/ /home/zeek
+chown -R zeek:zeek /opt/zeek/ /home/zeek && setcap cap_net_raw=eip /opt/zeek/bin/zeek && setcap cap_net_raw=eip /opt/zeek/bin/capstats
+
 
 echo -e "### Create Summary file collection.txt ...\n###"
 echo -e "### Summary" > collection.txt
