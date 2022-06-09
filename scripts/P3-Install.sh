@@ -25,8 +25,9 @@ chmod u+x zeek.service
 mv zeek.service /etc/systemd/system/
 systemctl enable zeek.service
 
-echo -e "### Installing crontab items"
-
+echo -e "### Downloading crontabs"
+wget https://raw.githubusercontent.com/ps1b/canids/main/scripts/crontab.zeek
+wget https://raw.githubusercontent.com/ps1b/canids/main/scripts/crontab.root
 
 echo -e "### Fetching rsync.sh"
 wget https://raw.githubusercontent.com/ps1b/canids/main/scripts/rsync.sh
