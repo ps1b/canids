@@ -1,5 +1,8 @@
 #!/usr/bin/sh
 
+echo -e "Enabling Powertools"
+sed -i -e "s|enabled=0|enabled=1|g" /etc/yum.repos.d/CentOS-Stream-PowerTools.repo
+
 echo -e "### Creating zeek user and group"
 groupadd zeek && useradd zeek -g zeek
 echo -e "### Creating create /opt/zeek and assign permissions"
