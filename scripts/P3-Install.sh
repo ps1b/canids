@@ -28,6 +28,7 @@ systemctl enable zeek.service
 echo -e "### Downloading crontabs"
 wget https://raw.githubusercontent.com/ps1b/canids/main/scripts/crontab.zeek
 wget https://raw.githubusercontent.com/ps1b/canids/main/scripts/crontab.root
+mv crontab.zeek crontab.root /home/zeek
 
 echo -e "### Fetching rsync.sh"
 wget https://raw.githubusercontent.com/ps1b/canids/main/scripts/rsync.sh
@@ -38,7 +39,7 @@ echo -e "### Fixing permissions for zeek user..."
 chown -R zeek:zeek /opt/zeek/ /home/zeek
 
 echo -e "### Create Summary file collection.txt ...\n###"
-echo -e "### Summary" >> collection.txt
+echo -e "### Summary" > collection.txt
 echo -e "### Adding blkid to collection.txt\n"
 echo -e "### BLKID /dev/sda:" >> collection.txt
 blkid /dev/sda >> collection.txt
@@ -51,6 +52,7 @@ echo -e "###\n###\n"
 echo -e "### Log rsa.pub\n###"
 echo -e "### rsa.pub\n###" >> collection.txt
 cat /home/zeek/.ssh/id_rsa.pub >> collection.txt
+echo -e "### To Do:\n### Install crontabs located in /home/zeek/crontab.*" >> collection.txt
 echo -e "\n###" >> collection.txt
 
 echo -e "### Done"
