@@ -1,0 +1,2 @@
+# Every minutes reload Syslog-ng (requires syslog-ng)
+# */30 * * * * /usr/sbin/syslog-ng-ctl reload
