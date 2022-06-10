@@ -20,6 +20,9 @@ mkdir /opt/zeek /home/zeek/.ssh /home/zeek/zeek-install
 echo -e "### Creating RSA key pair"
 ssh-keygen -q -t rsa -b 4096 -N '' -f /home/zeek/.ssh/id_rsa <<<y >/dev/null 2>&1
 
+#Add Zeek binary files to path.
+echo "pathmunge /opt/zeek/bin" > /etc/profile.d/zeek.sh
+
 echo -e "### Fixing permissions for zeek user..."
 chown -R zeek:zeek /opt/zeek/ /home/zeek && setcap cap_net_raw=eip /opt/zeek/bin/zeek && setcap cap_net_raw=eip /opt/zeek/bin/capstats
 
