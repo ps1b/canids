@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+# Install script for P3 zeek hardware.
+
 echo -e "Enabling Powertools"
 sed -i -e "s|enabled=0|enabled=1|g" /etc/yum.repos.d/CentOS-Stream-PowerTools.repo
 
