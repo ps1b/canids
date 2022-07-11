@@ -1470,7 +1470,14 @@ d) Add the script to crontab for execution every 5 minutes: `$crontab -e`.
 5 * * * * sh /home/zeek/zeek_update_intel-feeds.sh >/dev/null 2>&1
 ```
 
-d) Deploy the plugin `$zeekctl deploy`.
+e) Re-Propagate Zeek permissions to the Zeek folder and Capture packet functionality (as Root)
+
+`
+#chown -R zeek:zeek /opt/zeek"
+#setcap cap_net_raw=eip /opt/zeek/bin/zeek && setcap cap_net_raw=eip /opt/zeek/bin/capstats
+`
+
+f) Deploy the plugin `$zeekctl deploy`.
 
 
 
